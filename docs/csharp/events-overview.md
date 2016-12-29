@@ -3,12 +3,12 @@ title: Introduction to Events
 description: Introduction to Events
 keywords: .NET, .NET Core
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.devlang: csharp
 ms.assetid: 9b8d2a00-1584-4a5b-8994-5003d54d8e0c
 ---
 
@@ -65,25 +65,30 @@ an extension of the syntax for delegates.
 To define an event you use the `event` keyword:
 
 ```cs
-public event EventHandler<FileListArgs> OnProgress;
+public event EventHandler<FileListArgs> Progress;
 ```
 
 The type of the event (`EventHandler<FileListArgs>` in this example) must be a
 delegate type. There are a number of conventions that you should follow
 when declaring an event. Typically, the event delegate type has a void return.
-Prefix event declarations with 'On'.
-The remainder of the name is a verb. Use past tense (as in this example) when
+Event declarations should be a verb, or a verb phrase.
+Use past tense (as in this example) when
 the event reports something that has happened. Use a present tense verb (for
-example, `OnClosing`) to report something that is about to happen. Often, using
-present tense indicates that the event supports cancellation. For example,
-an `OnClosing` event may include an argument that would indicate if the close
-operation should continue, or not.  
+example, `Closing`) to report something that is about to happen. Often, using
+present tense indicates that your class supports some kind of customization
+behavior. One of the most common scenarios is to support cancellation. For example,
+a `Closing` event may include an argument that would indicate if the close
+operation should continue, or not.  Other scenarios may enable callers to modify
+behavior by updating properties of the event arguments. You may raise an
+event to indicate a proposed next action an algorithm will take. The event
+handler may mandate a different action by modifying  properties of the event
+argument.
 
-When you want to raise the event, you call the event using the delegate invocation
+When you want to raise the event, you call the event handlers using the delegate invocation
 syntax:
 
 ```cs
-OnProgress?.Invoke(this, new FileListArgs(file));
+Progress?.Invoke(this, new FileListArgs(file));
 ```
 
 As discussed in the section on [delegates](delegates-patterns.md), the ?.
@@ -93,15 +98,18 @@ when there are no subscribers to that event.
 You subscribe to an event by using the `+=` operator:
 
 ```cs
-EventHandler<FileListArgs> handler = (sender, eventArgs) => 
+EventHandler<FileListArgs> onProgress = (sender, eventArgs) => 
     Console.WriteLine(eventArgs.FoundFile);
-lister.OnProgress += handler;
+lister.Progress += OnProgress;
 ```
+
+The handler method typically is the prefix 'On' followed
+by the event name, as shown above.
 
 You unsubscribe using the `-=` operator:
 
 ```cs
-lister.OnProgress -= handler;
+lister.Progress -= onProgress;
 ```
 
 It's important to note that I declared a local variable for the expression that

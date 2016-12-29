@@ -3,11 +3,10 @@ title: How to Manage Package Dependency Versions for .NET Core 1.0
 description: How to Manage Package Dependency Versions for .NET Core 1.0
 keywords: .NET, .NET Core
 author: cartermp
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 4424a947-bdf9-4775-8d48-dc350a4e0aee
 ---
@@ -66,7 +65,7 @@ If so, you should ensure that the metapackage you start with is fixed to 1.0.  T
 
 **Are you depending on packages outside the** `NETStandard.Library` **or** `Microsoft.NETCore.App` **metapackages?**
 
-If so, you need to fixed your other dependencies to 1.0.  See the correct package versions and build numbers at the end of this article.
+If so, you need to fix your other dependencies to 1.0.  See the correct package versions and build numbers at the end of this article.
 
 ### A note on using a splat string (\*) when versioning
 

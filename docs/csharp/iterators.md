@@ -3,12 +3,12 @@ title: Iterators
 description: Iterators
 keywords: .NET, .NET Core
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.devlang: csharp
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
 ---
 
@@ -23,7 +23,7 @@ iterator for the elements of that class. These can be used for:
 
 + Performing an action on each item in a collection.
 + Enumerating a custom collection.
-+ Extending [LINQ](linq.md) or other libraries.
++ Extending [LINQ](linq/index.md) or other libraries.
 + Creating a data pipeline where data flows efficiently through iterator
 methods.
 
@@ -51,7 +51,7 @@ to generate the code necessary to iterate a collection: `IEnumerable<T>` and
 `IEnumerator<T>`. This mechanism is explained in more detail below.
 
 Both of these interfaces also have non-generic counterparts: `IEnumerable` and 
-`IEnumerator`. The [generic](generics.md) versions are preferred for modern code.
+`IEnumerator`. The [generic](programming-guide/generics/index.md) versions are preferred for modern code.
 
 ## Enumeration sources with iterator methods
 
@@ -194,14 +194,14 @@ private IEnumerable<int> IteratorMethod()
 ```
  
 Look at the methods above. The first uses the standard `return` statement to return
-either an empy collection, or the iterator created by the second method. The second
+either an empty collection, or the iterator created by the second method. The second
 method uses the `yield return` statement to create the requested sequence.
 
 ## Deeper Dive into `foreach`
 
 The `foreach` statement expands into a standard idiom that uses the
 `IEnumable<T>` and `IEnumerator<T>` interfaces to iterate across all
-elements of a colleciton. It also  minimizes errors developers make
+elements of a collection. It also  minimizes errors developers make
 by not properly managing resources. 
 
 The compiler translates the `foreach` loop shown in the first

@@ -3,11 +3,10 @@ title: Porting to .NET Core - Libraries
 description: Porting to .NET Core - Libraries
 keywords: .NET, .NET Core
 author: cartermp
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: a0fd860d-d6b6-4659-b325-8a6e6f5fa4a1
 ---
@@ -241,9 +240,9 @@ You can target .NET Core with the traditional project system in Visual Studio, b
 
 If you have more advanced project system needs, this should be your choice.  Note that if you wish to multitarget by generating platform-specific assemblies like with the `xproj` project system, you'll need to create a "Bait and Switch" PCL, as described in [How to Make Portable Class Libraries Work for You](https://blogs.msdn.microsoft.com/dsplaisted/2012/08/27/how-to-make-portable-class-libraries-work-for-you/).
 
-## Retargeting your .NET Framework Code to .NET Framework 4.6.1
+## Retargeting your .NET Framework Code to .NET Framework 4.6.2
 
-If your code is not targeting .NET Framework 4.6.1, it's recommended that you retarget.  This ensures that you can use the latest API alternatives for cases where the .NET Standard can't support existing APIs.
+If your code is not targeting .NET Framework 4.6.2, it's recommended that you retarget.  This ensures that you can use the latest API alternatives for cases where the .NET Standard can't support existing APIs.
 
 For each of your projects in Visual Studio you wish to port, do the following:
 
@@ -257,7 +256,7 @@ And that's it!  Because your projects now target .NET Framework 4.6.2, you can u
 
 The next step is to run the API Portability Analyzer (ApiPort) to generate a portability report that you can begin to analyze.
 
-You'll need to make sure you understand the [API Portability tool (ApiPort)](https://github.com/Microsoft/dotnet-apiport/blob/master/docs/HowTo/Introduction.md) and can generate portability reports for targeting .NET Core.  How you do this will likely vary based on your needs and personal tastes.  What follows are a few different approaches - you may find yourself mixing each approach depending on how your code is structured.
+You'll need to make sure you understand the [API Portability tool (ApiPort)](https://github.com/Microsoft/dotnet-apiport/blob/master/docs/HowTo/) and can generate portability reports for targeting .NET Core.  How you do this will likely vary based on your needs and personal tastes.  What follows are a few different approaches - you may find yourself mixing each approach depending on how your code is structured.
 
 ### Dealing Primarily with the Compiler
 
@@ -316,7 +315,7 @@ This approach may be best for larger and more complex projects, where restructur
  
 The analysis phase could take some time depending on how large your codebase is.  Spending time in this phase to thoroughly understand the scope of changes needed and to develop a plan can save you a lot of time in the long run, particularly if you have a more complex codebase.
 
-Your plan could involve making significant changes to your codebase while still targeting .NET Framework 4.6.1, making this a more structured version of the previous approach.  How you go about executing your plan will be dependent on your codebase.
+Your plan could involve making significant changes to your codebase while still targeting .NET Framework 4.6.2, making this a more structured version of the previous approach.  How you go about executing your plan will be dependent on your codebase.
 
 ### Mixing Approaches
 
@@ -327,12 +326,12 @@ It's likely that you'll mix the above approaches on a per-project basis.  You sh
 The best way to make sure everything works when you've ported your code is to test your code as you port it to .NET Core.  To do this, you'll need to use a testing framework that will build and run tests for .NET Core.  Currently, you have three options:
 
 * [xUnit](https://xunit.github.io/)
-   - [Getting Started](http://xunit.github.io/docs/getting-started-dnx.html)
+   - [Getting Started](http://xunit.github.io/docs/getting-started-dotnet-core.html)
    - [Tool to convert an MSTest project to xUnit](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
 * [NUnit](http://www.nunit.org/)
   - [Getting Started](https://github.com/nunit/docs/wiki/Installation)
   - [Blog post about migrating from MSTest to NUnit](http://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
-* [MSTest](https://msdn.microsoft.com/en-us/library/ms243147(v=vs.90).aspx)
+* [MSTest](https://msdn.microsoft.com/library/ms243147.aspx)
 
 ## Recommended Approach to Porting
 

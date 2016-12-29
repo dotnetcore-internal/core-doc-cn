@@ -3,11 +3,11 @@ title: .NET Assembly File Format
 description: .NET Assembly File Format
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
 ---
@@ -30,7 +30,7 @@ The .NET binary format is based on the Windows [PE file](http://en.wikipedia.org
 
 ![Assembly headers](./media/assembly-format/assembly-headers.png)
 
-Assembly Headers Assemblies headers from ECMA 335 II.25.1, Structure of the runtime file format.
+Assembly Headers from ECMA 335 II.25.1, Structure of the runtime file format.
 
 ## Processing the Assemblies
 

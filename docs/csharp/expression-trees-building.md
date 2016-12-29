@@ -3,12 +3,12 @@ title: Building Expression Trees
 description: Building Expression Trees
 keywords: .NET, .NET Core
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.devlang: csharp
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
 ---
 
@@ -203,7 +203,7 @@ we'd like to avoid in our everyday coding tasks.
 
 For this section, I've also updated the visitor code to visit every node in this expression
 tree and write out information about the nodes that are created in this sample. You can see
-the code in [the samples section](https://github.com/dotnet/core-docs/tree/master/samples/csharp-language/expression-trees).
+the code in [the samples section](https://github.com/dotnet/docs/tree/master/samples/csharp/expression-trees).
 You can experiment for yourself: build it and run the samples.
 
 ## Examining the APIs

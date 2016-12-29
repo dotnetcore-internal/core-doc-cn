@@ -3,11 +3,10 @@ title: Organizing Your Project to Support .NET Framework and .NET Core
 description: Organizing Your Project to Support .NET Framework and .NET Core
 keywords: .NET, .NET Core
 author: conniey
-manager: wpickett
+ms.author: mairaw
 ms.date: 07/18/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 3af62252-1dfa-4336-8d2f-5cfdb57d7724
 ---
@@ -100,18 +99,18 @@ Please see [.NET Core porting documentation][porting-doc] for more guidance on m
 
 [porting-doc]: index.md
 [example-initial-project]: media/project-structure/project.png "Existing project"
-[example-initial-project-code]: https://github.com/dotnet/core-docs/tree/master/samples/core-projects/libraries/migrate-library/
+[example-initial-project-code]: https://github.com/dotnet/docs/tree/master/samples/framework/libraries/migrate-library/
 
 [example-xproj]: media/project-structure/project.xproj.png "Create an xproj that targets multiple frameworks"
-[example-xproj-code]: https://github.com/dotnet/core-docs/tree/master/samples/core-projects/libraries/migrate-library-xproj/
-[example-xproj-projectjson]: https://github.com/dotnet/core-docs/tree/master/samples/core-projects/libraries/migrate-library-xproj/src/Car/project.json
-[example-xproj-projectjson-test]: https://github.com/dotnet/core-docs/tree/master/samples/core-projects/libraries/migrate-library-xproj/tests/Car.Tests/project.json
+[example-xproj-code]: https://github.com/dotnet/docs/tree/master/samples/framework/libraries/migrate-library-xproj/
+[example-xproj-projectjson]: https://github.com/dotnet/docs/tree/master/samples/framework/libraries/migrate-library-xproj/src/Car/project.json
+[example-xproj-projectjson-test]: https://github.com/dotnet/docs/tree/master/samples/framework/libraries/migrate-library-xproj/tests/Car.Tests/project.json
 
 [example-xproj-different-folder]: media/project-structure/project.xproj.different.png ".NET Core project with existing PCL in different folder"
-[example-xproj-different-code]: https://github.com/dotnet/core-docs/tree/master/samples/core-projects/libraries/migrate-library-xproj-keep-csproj/
+[example-xproj-different-code]: https://github.com/dotnet/docs/tree/master/samples/framework/libraries/migrate-library-xproj-keep-csproj/
 
 [example-pcl]: media/project-structure/project.pcl.png "PCL Targeting .NET Core"
-[example-pcl-code]: https://github.com/dotnet/core-docs/tree/master/samples/core-projects/libraries/migrate-library-pcl
+[example-pcl-code]: https://github.com/dotnet/docs/tree/master/samples/framework/libraries/migrate-library-pcl
 
 [option-xproj]: #replace-existing-projects-with-a-multi-targeted-net-core-project-xproj
 [option-pcl]: #create-a-portable-class-library-pcl-to-target-net-core

@@ -3,12 +3,12 @@ title: Interpreting Expressions
 description: Interpreting Expressions
 keywords: .NET, .NET Core
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.devlang: csharp
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
 ---
 
@@ -65,7 +65,7 @@ Expression<Func<int>> sum = () => 1 + 2;
 > because the right-hand side of the assignment is implicitly typed. To understand
 > this more deeply, read [here](implicitly-typed-lambda-expressions.md).
 
-The root node is a `LambaExpression`. In order to get the interesting
+The root node is a `LambdaExpression`. In order to get the interesting
 code on the right hand side of the `=>` operator, you need to find one
 of the children of the `LambdaExpression`. We'll do that with all the
 expressions in this section. The parent node does help us find the return

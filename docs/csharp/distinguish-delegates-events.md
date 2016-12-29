@@ -3,12 +3,12 @@ title: Distinguising Delegates and Events
 description: Distinguising Delegates and Events
 keywords: .NET, .NET Core
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.devlang: csharp
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
 ---
 
@@ -48,7 +48,7 @@ properly sort the elements. LINQ queries must be supplied with delegates
 in order to determine what elements to return. Both used a design built
 with delegates.
 
-Consider the `OnProgress` event handler. It reports progress on a task.
+Consider the `Progress` event. It reports progress on a task.
 The task continues to proceed whether or not there are any listeners.
 The `FileSearcher` is another example. It would still search and find
 all the files that were sought, even with no event subscribers attached.

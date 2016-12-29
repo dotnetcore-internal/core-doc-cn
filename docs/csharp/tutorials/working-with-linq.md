@@ -3,12 +3,12 @@ title: Working with LINQ
 description: Working with LINQ
 keywords: .NET, .NET Core
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.devlang: csharp
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
 ---
 
@@ -38,7 +38,7 @@ You'll also compare the updated order to the original order.
 
 This tutorial has multiple steps. After each step, you can run the
 application and see the progress. You can also see the completed
-sample in our [GitHub repository.](https://github.com/dotnet/core-docs/blob/master/samples/getting-started/csharp/console-linq)
+sample in our [GitHub repository.](https://github.com/dotnet/docs/blob/master/samples/csharp/getting-started/console-linq)
 
 
 ## Prerequisites

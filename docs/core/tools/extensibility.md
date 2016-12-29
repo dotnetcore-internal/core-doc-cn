@@ -1,13 +1,13 @@
 ---
 title: .NET Core CLI extensibility model 
 description: .NET Core CLI extensibility model 
-keywords: .NET, .NET Core
-author: mairaw
-manager: wpickett
+keywords: CLI, extensibility, custom commands, .NET Core
+author: blackdwarf
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 1bebd25a-120f-48d3-8c25-c89965afcbcd
 ---
@@ -28,7 +28,7 @@ The two extensibility mechanisms outlined above are not exclusive; you can use b
 depends largely on what is the goal you are trying to achieve with your extension.
 
 ## Per-project based extensibility
-Per-project tools are [portable console applications](../app-types.md) that are distributed as NuGet packages. Tools are 
+Per-project tools are [portable console applications](../deploying/index.md) that are distributed as NuGet packages. Tools are 
 only available in the context of the project that references them and for which they are restored; invocation outside 
 of the context of the project (for example, outside of the directory that contains the project) will fail as the command will 
 not be able to be found.
@@ -149,7 +149,7 @@ than a single project. The main drawback of this extensions mechanism is that it
 tool exists. If you need it on another machine, you would have to deploy it.
 
 This pattern of CLI toolset extensibility is very simple. As covered in the [.NET Core CLI overview](index.md), `dotnet` driver 
-can run any command that is named after the `dotnet <command>` convention. The default resolution logic will first 
+can run any command that is named after the `dotnet-<command>` convention. The default resolution logic will first 
 probe several locations and will finally fall to the system PATH. If the requested command exists in the system PATH 
 and is a binary that can be invoked, `dotnet` driver will invoke it. 
 

@@ -2,12 +2,12 @@
 title: .NET Core SDK Overview 
 description: .NET Core SDK Overview 
 keywords: .NET, .NET Core
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 26bc9822-e42b-48ec-b0d6-499dc604add7
 ---
@@ -22,7 +22,7 @@ It contains the following components:
 
 1. The .NET Core Command Line Tools that are used to build applications
 2. .NET Core (libraries and runtime) that allow applications to both be built and run
-3. The `dotnet` driver for running the CLI commands as well as running applications
+3. The `dotnet` driver for running the [CLI commands](tools/index.md) as well as running applications
 
 
 ## Acquiring the .NET Core SDK
@@ -44,5 +44,4 @@ document.
 
 By default, the SDK will install in a "side-by-side" (SxS) manner. This means that multiple versions of the CLI tools 
 can coexist at any given time on a single machine. How the correct version gets used is explained in more detail in 
-the [driver section](#driver) below. 
-
+the [driver section](tools/index.md#driver) of .NET Core Command Line Tools topic.

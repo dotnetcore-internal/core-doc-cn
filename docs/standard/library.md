@@ -3,11 +3,11 @@ title: .NET Standard Library
 description: .NET Standard Library
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
 ---
@@ -28,16 +28,16 @@ The various .NET runtimes implement specific versions of the .NET Standard Libra
 
 You can see the complete set of .NET runtimes that support the .NET Standard Library.
 
-| Platform Name | Alias |  |  |  |  |  | | |
-| :---------- | :--------- |:--------- |:--------- |:--------- |:--------- |:--------- |:--------- |:--------- |
-|.NET Standard | netstandard | 1.0 | 1.1 | 1.2 | 1.3 | 1.4 | 1.5 | 1.6 |
-|.NET Core|netcoreapp|&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|1.0|
-|.NET Framework|net|&rarr;|4.5|4.5.1|4.6|4.6.1|4.6.2|4.6.3|
-|Mono/Xamarin Platforms||&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|*|
-|Universal Windows Platform|uap|&rarr;|&rarr;|&rarr;|&rarr;|10.0|||
-|Windows|win|&rarr;|8.0|8.1|||||
-|Windows Phone|wpa|&rarr;|&rarr;|8.1|||||
-|Windows Phone Silverlight|wp|8.0|||||||
+| Platform Name | Alias |  |  |  |  |  | | | |
+| :---------- | :--------- |:--------- |:--------- |:--------- |:--------- |:--------- |:--------- |:--------- |:--------- |
+|.NET Standard | netstandard | 1.0 | 1.1 | 1.2 | 1.3 | 1.4 | 1.5 | 1.6 | 2.0 |
+|.NET Core|netcoreapp|&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|1.0|vNext|
+|.NET Framework|net|&rarr;|4.5|4.5.1|4.6|4.6.1|4.6.2|vNext|4.6.1|
+|Mono/Xamarin Platforms||&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|&rarr;|vNext|
+|Universal Windows Platform|uap|&rarr;|&rarr;|&rarr;|&rarr;|10.0|&rarr;|&rarr;|vNext|
+|Windows|win|&rarr;|8.0|8.1||||||
+|Windows Phone|wpa|&rarr;|&rarr;|8.1||||||
+|Windows Phone Silverlight|wp|8.0||||||||
 
 ## Comparison to Portable Class Libraries
 
@@ -67,7 +67,7 @@ The [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) me
 
 A given component, like System.Runtime, describes:
 
-- Part of .NET Standard Library (just it's scope).
+- Part of .NET Standard Library (just its scope).
 - Multiple versions of .NET Standard Library, for that scope.
 
 Derivative artifacts are provided to enable more convenient reading and to enable certain developer scenarios (for example, using a compiler).

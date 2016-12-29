@@ -3,12 +3,12 @@ title: System.Delegate and the `delegate` keyword
 description: System.Delegate and the `delegate` keyword
 keywords: .NET, .NET Core
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.devlang: csharp
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
 ---
 
@@ -166,7 +166,7 @@ have multiple target methods attached to a delegate object.
 
 ## Delegate and MulticastDelegate classes
 
-The language support desccribed above provides the features
+The language support described above provides the features
 and support you'll typically need to work with delegates. These
 features are built on two classes in the .NET Core
 framework: @System.Delegate and @"System.MulticastDelegate".

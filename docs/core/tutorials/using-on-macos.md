@@ -3,11 +3,10 @@ title: Getting started with .NET Core on macOS
 description: Getting started with .NET Core on macOS, using Visual Studio Code
 keywords: .NET, .NET Core
 author: bleroy
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 8ad82148-dac8-4b31-9128-b0e9610f4d9b
 ---
@@ -27,8 +26,7 @@ tools, and incorporate third-party libraries via [NuGet](http://nuget.org).
 This article uses Visual Studio Code on Mac OS. Where there are differences,
 it points out the differences for the Windows platform.
 
-Prerequisites
--------------
+## Prerequisites
 
 Before starting, you'll need to install the [.NET Core SDK](https://www.microsoft.com/net/core),
 currently in a preview release. The .NET Core SDK includes the latest release
@@ -40,11 +38,10 @@ that will improve the .NET Core development experience.
 
 You can find the links to all of these at the [.NET home page](http://dot.net).
 
-Getting Started
----------------
+## Getting Started
 
 The source for this tutorial is available on
-[GitHub](https://github.com/dotnet/core-docs/tree/master/samples/getting-started/golden).
+[GitHub](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/golden).
 
 Start Visual Studio Code. Press Ctrl + '\`' (the back-quote character) to open
 an embedded terminal in VS Code. (Alternatively, you can use a separate
@@ -70,7 +67,7 @@ In VS Code, open the 'golden' directory. This directory is the root of your solu
 Next, create a `global.json` file in the root directory for your solution.
 The contents of `global.json` are:
 
-```js
+```json
 {
     "projects": [
         "src",
@@ -102,7 +99,7 @@ This creates a library project, with two files: `project.json` and
 
 `project.json` contains the following information:
 
-```js
+```json
 {
   "version": "1.0.0-*",
   "buildOptions": {
@@ -124,7 +121,7 @@ This library project will make use of JSON representation of objects, so you'll 
 add a reference to the `Newtonsoft.Json` NuGet package. In`project.json`
 add the latest pre-release version of the package as a dependency:
 
-```js
+```json
 "dependencies": {
     "Newtonsoft.Json": "9.0.1-beta1"
 },
@@ -143,7 +140,7 @@ but will do so by converting that number to a JSON string, and then
 deserializing it. Rename the file `Library.cs` to `Thing.cs`. Then, replace
 the existing code (for the template-generated Class1) with the following:
 
-```cs
+```csharp
 using static Newtonsoft.Json.JsonConvert;
 
 namespace Library
@@ -175,7 +172,7 @@ You'll need to add a dependency node for the library you wrote in the steps
 above. Open `project.json` and update the dependencies section to the following
 (including the `library` node, which is the last node below):
 
-```js
+```json
 "dependencies": {
   "System.Runtime.Serialization.Primitives": "4.1.1",
   "xunit": "2.1.0",
@@ -221,10 +218,10 @@ to create a new console application.
 
 Your console application depends on the library you built and tested
 in the previous steps. You need to indicate that by editing `project.json`
-to add this dependency.  In the `dependencies` node, add the `Library`
-node below the `Microsoft.NetCore.App` node as follows:
+to add this dependency.  In the `dependencies` node, add the `library`
+node as follows:
 
-```js
+```json
 "dependencies": {
   "library": {
     "target": "project"
@@ -239,13 +236,13 @@ NuGet package.
 Run `dotnet restore` to restore all dependencies. Open `program.cs`
 and replace the contents of the `Main` method with this line:
 
-```cs
+```csharp
 WriteLine($"The answer is {new Thing().Get(19, 23)}");
 ```
 
-You'll need to add a couple using directives to the top of the file:
+You'll need to add a couple `using` directives to the top of the file:
 
-```cs
+```csharp
 using static System.Console;
 using Library;
 ```
@@ -257,7 +254,7 @@ can type `dotnet run` to run the executable.
 
 You can debug your code in VS Code using the C# extension.
 You install this extension by pressing `F1` to open the VS Code
-palette. Type `ext install` to see the list of extensions. Select the `C#`
+palette. Type `ext install` to see the list of extensions. Select the C#
 extension. (More details are available on the [Visual Studio
 Code C# Extension documentation](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md)
 page.)
@@ -282,7 +279,7 @@ runs `dotnet build` in the workspace source directory. Instead, you want to run 
 the `src/app` directory. You need to add a `options` node to set the current
 working directory to that:
 
-```js
+```json
 "options": {
     "cwd": "${workspaceRoot}/src/app"
 }
@@ -291,13 +288,13 @@ working directory to that:
 Next, you'll need to open `launch.json` and update the program path. You'll see a
 node under "configurations" that describes the program. You'll see:
 
-```js
+```json
 "program": "${workspaceRoot}/bin/Debug/<target-framework>/<project-name.dll>",
 ```
 
 You'll change this to:
 
-```js
+```json
 "program": "${workspaceRoot}/src/app/bin/Debug/netcoreapp1.0/app.dll",
 ```
 
@@ -307,7 +304,7 @@ generate portable PDB files (this happens by default on Mac OSX and Linux).
 Add the `debugType` node inside `buildOptions`. You'll need to add the `debugType` node
 in `project.json` for both the `src/app` and `src/library` folders.
 
-```js
+```json
   "buildOptions": {
     "debugType": "portable"
   },

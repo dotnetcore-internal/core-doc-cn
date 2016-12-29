@@ -1,9 +1,8 @@
-Contributing
-============
+# Contributing
 
 Thank you for your interest in contributing to the .NET documentation!
 
-In this topic, you'll see the basic process for adding or updating content in the [.NET documentation site](https://docs.microsoft.com/dotnet). For the detailed step-by-step process and instructions, please see the [official guide](https://github.com/Microsoft/Docs/blob/master/readme.md) in the [Microsoft/Docs](https://github.com/Microsoft/Docs) repo.
+In this topic, you'll see the basic process for adding or updating content in the [.NET documentation site](https://docs.microsoft.com/dotnet). 
 
 In this topic, we'll cover: 
 
@@ -54,7 +53,7 @@ Also, remove the "wrench" icon (🔧) from the TOC and the file heading, if appl
         /porting
           porting_sample.cs
 
-**Step 5:** Submit a Pull Request (PR) from your branch to `dotnet/core-docs/master`.
+**Step 5:** Submit a Pull Request (PR) from your branch to `dotnet/docs/master`.
 
 If your PR is addressing an existing issue, add the `Fixes #Issue_Number` keyword to the commit message or PR description, so the issue can be automatically closed when the PR is merged. For more information, see [Closing issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages/).
 
@@ -77,7 +76,7 @@ Below is a short list of guiding rules that you should keep in mind when you are
 - **DO** follow the [GitHub Flow workflow](https://guides.github.com/introduction/flow/). 
 - **DO** blog and tweet (or whatever) about your contributions, frequently!
 
-> Note: you might notice that some of the topics are not currently following all the guidelines specified here and on the [style guide](./styleguide/template.md) as well. We're working towards achieving consistency throughout the site. Check the list of [open issues](https://github.com/dotnet/core-docs/issues?q=is%3Aissue+is%3Aopen+label%3Aguidelines-adherence) we're currently tracking for that specific goal. 
+> Note: you might notice that some of the topics are not currently following all the guidelines specified here and on the [style guide](./styleguide/template.md) as well. We're working towards achieving consistency throughout the site. Check the list of [open issues](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Aguidelines-adherence) we're currently tracking for that specific goal. 
 
 ## Building the docs
 
@@ -89,15 +88,15 @@ There are several ways to use DocFX, and most of them are covered in the [DocFX 
 The following instructions use the [command-line based](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html#2-use-docfx-as-a-command-line-tool) version of the tool. 
 If you are comfortable with other ways listed on the link above, feel free to use those. 
 
-**Note:** please note that as of now, DocFX requires the .NET Framework on Windows or Mono for Linux or macOS. We'll be working towards porting it to .NET Core in the future. 
+**Note:** Currently DocFX requires the .NET Framework on Windows or Mono (for Linux or macOS). We hope to port it to .NET Core in the future. 
 
 You can build and preview the resulting site locally using a built-in web server. Navigate to the core-docs folder on your machine and type the following command:
 
 ```
-docfx .\docfx.json --serve
+docfx -t default --serve
 ```
 	
-This starts the local preview on [localhost:8080](http://localhost:8080). You can then view the changes by going to `http://localhost:8080/docs/[path]`, such as http://localhost:8080/docs/articles/.
+This starts the local preview on [localhost:8080](http://localhost:8080). You can then view the changes by going to `http://localhost:8080/[path]`, such as http://localhost:8080/articles/welcome.html.
 
 **Note:** the local preview currently doesn't contain any themes at the moment so the look and feel won't be the same as in the documentation site. We're working towards fixing that experience.
 
@@ -110,25 +109,21 @@ All samples should be complete applications or libraries. Where the sample creat
 it should include unit tests or an application that lets readers run the code.
 
 The samples are organized in directories that match the directories under
-docs in this repo:
+docs in this repo.
 
-- `getting-started` contains getting started samples. 
+- `core` contains .NET Core samples. These are referenced by topics under `/docs/core`.
 
-   * Each top-level section of our documentation contains a "getting-started" or "tutorials" section.  These topics and their associated samples represent the first look(s) at a topic area. If your sample's goal is to help beginners get started with the platform or the technology, place your sample under `samples/getting-started`. There should be a directory that matches the section for your tutorial (such as `samples/getting-started/csharp`), but if not, simply create a new folder.
+   * The `core` directory contains samples that highlight .NET Core. The purpose of your sample should be to teach developers something about .NET Core. This includes the framework packaging, the new tooling, or the cross-platform experience. Our CI build server builds these samples on multiple supported platforms. Therefore, every sample must be configured to build on Linux, Mac, and Windows.
 
-- `core-projects` contains .NET Core samples. These are referenced by topics under `/docs/core`.
+- `csharp` contains C# language samples. These are referenced by topics under `docs/csharp`.
 
-   * The `core-projects` directory contains samples that highlight .NET Core. The purpose of your sample should be to teach developers something about .NET Core. This includes the framework packaging, the new tooling, or the cross-platform experience.
+   * The `csharp` directory contains samples where the purpose is to explain the C# language. While these samples will use frameworks and libraries, their focus is on the C# language. Our CI build server builds these samples on multiple supported platforms. Therefore, every sample must be configured to build on Linux, Mac, and Windows.
 
-- `csharp-language` contains C# language samples. These are referenced by topics under `docs/csharp`.
+- `framework` contains .NET Framework samples. These are referenced by topics under many different locations in the documentation. These samples build only on Windows where the .NET framework and Visual Studio are installed.
 
-   * The `csharp-language` directory contains samples where the purpose is to explain the C# language. While these samples will use frameworks and libraries, their focus is on the C# language.
+   * The `framework` directory contains samples that highlight .NET with platform dependencies. These may include migration samples, platform specific samples, or other samples that require the framework or the Windows based tools. Our CI build server builds these samples on Windows only. Do not place any samples here that should be checked for cross-platform builds.
 
- - `linq` contains all the 101 LINQ samples that were originally created when LINQ was developed. These don't have topics associated with them yet.
-
-   * The `linq` directory contains samples that are specific to understanding the concepts and implementation behind Language Integrated Query (LINQ). These samples should be focused on the language support and library methods that are specific to LINQ. Other samples my use the LINQ libraries, but unless they are focused on explaining LINQ concepts, they should be in one of the other directories.
-
-We will expand these directories as the core-docs repository adds new content. 
+We will expand these directories as the core-docs repository adds new content. For example, we will add Xamarin directories, like `xamarin-ios` and `xamarin-android` directories. 
 
 Sample code may fit more than one of these areas. In those cases, place the sample so it matches
 the topics you are covering in your documents. Ask yourself what readers will learn from reading
@@ -143,4 +138,4 @@ with `http://docs.microsoft.com/dotnet/articles`.
 
 Your topic will also contain links to the sample. Link directly to the sample's folder on GitHub.
 
-For more information, see the [Samples Readme](https://github.com/dotnet/core-docs/blob/master/samples/README.md).
+For more information, see the [Samples Readme](https://github.com/dotnet/docs/blob/master/samples/README.md).

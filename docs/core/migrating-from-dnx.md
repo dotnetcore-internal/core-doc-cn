@@ -3,11 +3,10 @@ title: Migrating from DNX to .NET Core CLI
 description: Migrating from DNX to .NET Core CLI
 keywords: .NET, .NET Core
 author: blackdwarf
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: c0d70120-78c8-4d26-bb3c-801f42fc2366
 ---
@@ -15,8 +14,8 @@ ms.assetid: c0d70120-78c8-4d26-bb3c-801f42fc2366
 # Migrating from DNX to .NET Core CLI
 
 ## Overview
-With RC1 release of .NET Core and ASP.NET Core 1.0, we introduced DNX tooling to the world. With RC2 release of .NET 
-Core and ASP.NET Core 1.0 we transitioned to the .NET Core CLI.
+The RC1 release of .NET Core and ASP.NET Core 1.0 introduced DNX tooling. The RC2 release of .NET 
+Core and ASP.NET Core 1.0 moved from DNX to the .NET Core CLI.
 
 As a slight refresher, let's recap what DNX was about. DNX was a runtime and a toolset used to build .NET Core and, 
 more specifically, ASP.NET Core 1.0 applications. It consisted of 3 main pieces:
@@ -152,7 +151,7 @@ a fully *portable* application or you may want to have a *self-contained* applic
 like .NET Framework applications work: it needs a shared component to execute it on the target machine 
 (.NET Core). The self-contained application doesn't require .NET Core to be installed on the target, but you have to 
 produce one application for each OS you wish to support. These portability types and more are discussed in the
- [application portability type](app-types.md) document. 
+ [application portability type](deploying/index.md) document. 
 
 Once you make a call on what type of portability you want, you need to change your targeted framework(s). If you were 
 writing applications for .NET Core, you were most likely using `dnxcore50` as  your targeted framework. With the CLI 
@@ -160,7 +159,7 @@ and the changes that the new [.NET Standard Library](https://github.com/dotnet/c
 brought, the framework needs to be one of the following:
 
 1. `netcoreapp1.0` - if you are writing applications on .NET Core (including ASP.NET Core applications)
-2. `netstandard1.5` - if you are writing class libraries for .NET Core
+2. `netstandard1.6` - if you are writing class libraries for .NET Core
 
 If you are using other `dnx` targets, like `dnx451` you will need to change those as well. `dnx451` should be changed to `net451`. 
 Please refer to the [.NET Standard Library document](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) 
@@ -168,7 +167,7 @@ for more information.
 
 Your `project.json` is now mostly ready. You need to go through your dependencies list and update the dependencies to 
 their newer versions, especially if you are using ASP.NET Core dependencies. If you were using separate packages for BCL APIs, 
-you can use the runtime package as explained in the [application portability type](app-types.md) document. 
+you can use the runtime package as explained in the [application portability type](deploying/index.md) document. 
 
 Once you are ready, you can try restoring with `dotnet restore`. Depending on the version of your dependencies, you 
 may encounter errors if NuGet cannot resolve the dependencies for one of the 

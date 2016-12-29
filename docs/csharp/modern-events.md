@@ -3,12 +3,12 @@ title: The Updated .NET Core Event Pattern
 description: The Updated .NET Core Event Pattern
 keywords: .NET, .NET Core
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.devlang: csharp
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
 ---
 
@@ -93,7 +93,7 @@ create a safe `async void` method. The basics of the pattern you need
 to implement are below:
 
 ```cs
-worker.OnStartWorking += async (sender, eventArgs) =>
+worker.StartWorking += async (sender, eventArgs) =>
 {
     try 
     {

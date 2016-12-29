@@ -3,11 +3,10 @@ title: .NET Core API Reference
 description: .NET Core API Reference 
 keywords: .NET, .NET Core, .NET Core API Reference, .NET Core class library, .NET class library
 author: rpetrusha
-manager: wpickett
+ms.author: ronpet
 ms.date: 06/20/2016
 ms.topic: managed-reference
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: ab0b8c9f-925f-4c45-b337-b1deeb8aec4e
 ---
@@ -488,7 +487,7 @@ The following is a list of namespaces in the .NET Core class library. Each names
 <tr>
    <td>@System.Threading </td>
    <td>
-   Provides types that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data (such as @System.Threading.Mutex, @System.Threading.Monitor, @System.Threading.Interlocked, and @System.Threading.AutoResetEvent), this namespace includes a @System.Threading.ThreadPool class that allows you to use a pool of system-supplied threads, and a @System.Threading.Timer class that executes callback methods on thread pool threads.
+   Provides types that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data (such as @System.Threading.Mutex, @System.Threading.Monitor, @System.Threading.Interlocked, and [AutoResetEvent](xref:System.Threading.AutoResetEvent)), this namespace includes a @System.Threading.ThreadPool class that allows you to use a pool of system-supplied threads, and a @System.Threading.Timer class that executes callback methods on thread pool threads.
     </td>
 </tr>
 <tr>
@@ -597,4 +596,4 @@ The following is a list of namespaces in the .NET Core class library. Each names
 
 ## Improving the Documentation ##
 
-If you find an issue or an inconsistency, we would love to hear about it! Go to the [.NET Core docs repo](https://github.com/dotnet/core-docs/ ".NET Core docs repo") on Github, and open an issue to let us know.
+If you find an issue or an inconsistency, we would love to hear about it! Go to the [.NET docs repo](https://github.com/dotnet/docs/) on Github, and open an issue to let us know.

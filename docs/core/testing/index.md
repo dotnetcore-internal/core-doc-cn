@@ -3,11 +3,10 @@ title: Unit Testing in .NET Core
 description: Unit Testing in .NET Core
 keywords: .NET, .NET Core
 author: ardalis
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
 ---
@@ -49,7 +48,7 @@ dependencies on infrastructure. These tend to make tests slower and
 more brittle, and thus should be reserved for integration tests. You
 can avoid these hidden dependencies in your application code by following
 the [Explicit Dependencies Principle](http://deviq.com/explicit-dependencies-principle/)
-and using [Dependency Injection](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html)
+and using [Dependency Injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection)
 to request your dependencies from the framework. You can also keep your
 unit tests in a separate project from your integration tests, and ensure
 your unit test project doesn’t have references to or dependencies on

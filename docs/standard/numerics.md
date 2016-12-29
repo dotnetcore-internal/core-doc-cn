@@ -3,11 +3,11 @@ title: Numerics in .NET Core
 description: Numerics in .NET Core
 keywords: .NET, .NET Core
 author: rpetrusha
-manager: wpickett
+ms.author: ronpet
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 6b8696be-55f5-4b66-98f3-69ff827c2c49
 ---
@@ -43,7 +43,7 @@ Type | Size (bytes) | Minimum Value | Maximum Value
 ---- | ------------ | ------------- | -------------
 [System.Double](https://docs.microsoft.com/dotnet/core/api/System.Double) | 8 | -1.79769313486232e308 | 1.79769313486232e308
 [System.Single](https://docs.microsoft.com/dotnet/core/api/System.Single) | 4 | -3.402823e38 | 3.402823e38
-[System.Decimal](https://docs.microsoft.com/dotnet/core/api/System.Decimal) | 8 | -79,228,162,514,264,337,593,543,950,335 | 79,228,162,514,264,337,593,543,950,335
+[System.Decimal](https://docs.microsoft.com/dotnet/core/api/System.Decimal) | 16 | -79,228,162,514,264,337,593,543,950,335 | 79,228,162,514,264,337,593,543,950,335
    
 Each floating-point type supports a standard set of arithmetic, comparison, equality, explicit conversion, and implicit conversion operators. Each also includes methods to perform equality comparisons and relative comparisons, to convert the string representation of a floating-point number, and to convert a floating-point number to its string representation. Some additional mathematical, algebraic, and trigonometric operations are available from the `Math` class. You can also work with the individual bits in `Double` and `Single` values by using the `BitConverter` class. The `Decimal` structure has its own methods, `Decimal.GetBits` and `Decimal.Decimal(Int32())`, for working with a decimal value's individual bits, as well as its own set of methods for performing some additional mathematical operations. 
 

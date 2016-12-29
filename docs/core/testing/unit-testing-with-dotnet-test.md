@@ -3,11 +3,10 @@ title: Unit Testing in .NET Core using dotnet test
 description: Unit Testing in .NET Core using dotnet test
 keywords: .NET, .NET Core
 author: ardalis
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: bdcdb812-6f13-4f20-9e90-0c0977937142
 ---
@@ -16,7 +15,7 @@ ms.assetid: bdcdb812-6f13-4f20-9e90-0c0977937142
 
 By [Steve Smith](http://ardalis.com) and [Bill Wagner](https://github.com/BillWagner)
 
-[View or download sample code](https://github.com/dotnet/core-docs/tree/master/samples/core-projects/unit-testing/using-dotnet-test)
+[View or download sample code](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test)
 
 ## Creating the Projects
 
@@ -32,7 +31,7 @@ final project structure will be something like this:
    |__/PrimeService
       |__Source Files
       |__project.json
-/test
+|__/test
    |__/PrimeService.Tests
       |__Test Files
       |__project.json
@@ -57,7 +56,7 @@ CD into that directory, and run `dotnet new -t lib` to create the source
 project.
 
 
-Rename`Library.cs` as 'PrimeService.cs`. To use TDD, you'll create a failing implementation of the
+Rename `Library.cs` as `PrimeService.cs`. To use test-driven development (TDD), you'll create a failing implementation of the
 `PrimeService` class:
 
 ```cs
@@ -137,7 +136,8 @@ to inform NuGet that it should look in project directories,
 not in the NuGet feed. Without this key, you might download
 a package with the same name as your internal library.
 
-You can see the entire file in the [samples repository](https://github.com/dotnet/core-docs/blob/master/samples/unit-testing/using-dotnet-test/test/PrimeService.Tests/project.json)
+You can see the entire file in the
+[samples repository](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-using-dotnet-test/test/PrimeService.Tests/project.json) 
 on GitHub.
 
 After this initial structure is in place, you can write your first test.
@@ -241,11 +241,14 @@ Now, these tests all pass.
 You continue to iterate by adding more tests, more theories,
 and more code in the main library. You'll quickly end up
 with the
-[finished version of the tests](https://github.com/dotnet/core-docs/blob/master/samples/core-projects/unit-testing/using-dotnet-test/test/PrimeService.Tests/PrimeServie_IsPrimeShould.cs)
+[finished version of the tests](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-using-dotnet-test/test/PrimeService.Tests/PrimeServie_IsPrimeShould.cs)
 and the
-[complete implementation of the library](https://github.com/dotnet/core-docs/blob/master/samples/core-projects/unit-testing/using-dotnet-test/src/PrimeService/PrimeService.cs).
+[complete implementation of the library](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-using-dotnet-test/src/PrimeService/PrimeService.cs).
 
 You've built a small library and a set of unit tests for that library.
 You've structured this solution so that adding new packages and tests
 will be seamless, and you can concentrate on the problem at hand. The 
 tools will run automatically.
+   
+   > [!TIP]
+   > On Windows platform you can use MSTest. Find out more in the [Using MSTest on Windows document](./using-mstest-on-windows.md).
